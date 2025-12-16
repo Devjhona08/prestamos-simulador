@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f2f2f7" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Simulador de Préstamos</title>
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">Préstamo</div>
+      <button class="ghost" id="btnInfo" aria-label="Info">i</button>
+    </header>
+
+    <main class="card">
+      <h1>Simulador</h1>
+      <p class="subtitle">Ingresa los datos y calcula tu cuota.</p>
+
+      <div class="field">
+        <label>Monto del préstamo</label>
+        <div class="inputWrap">
+          <span class="prefix">S/</span>
+          <input id="monto" inputmode="decimal" placeholder="Ej: 5000" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Interés mensual (%)</label>
+        <div class="inputWrap">
+          <input id="interes" inputmode="decimal" placeholder="Ej: 2.5" autocomplete="off" />
+          <span class="suffix">%</span>
+        </div>
+        <small class="hint">Interés mensual (no anual). Ej: 2.5 = 2.5%/mes</small>
+      </div>
+
+      <div class="field">
+        <label>Meses</label>
+        <div class="inputWrap">
+          <input id="meses" inputmode="numeric" placeholder="Ej: 12" autocomplete="off" />
+          <span class="suffix">meses</span>
+        </div>
+      </div>
+
+      <button class="primary" id="btnCalcular">
+        <span class="btnText">Calcular</span>
+        <span class="spinner" id="btnSpinner" aria-hidden="true"></span>
+      </button>
+
+      <section class="results" id="results" hidden>
+        <div class="row">
+          <div class="k">Cuota mensual</div>
+          <div class="v" id="cuota">—</div>
+        </div>
+        <div class="row">
+          <div class="k">Total pagado</div>
+          <div class="v" id="total">—</div>
+        </div>
+        <div class="row">
+          <div class="k">Interés total</div>
+          <div class="v" id="interesTotal">—</div>
+        </div>
+
+        <button class="secondary" id="btnDetalle" disabled>Ver detalle</button>
+      </section>
+    </main>
+
+    <footer class="foot">Offline • Minimal • iOS style</footer>
+  </div>
+
+  <!-- Modal (empieza cerrado) -->
+  <div class="modalBack" id="modalBack" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modalHeader">
+        <div class="modalTitle" id="modalTitle">Detalle</div>
+        <button class="ghost" id="modalClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modalBody" id="modalBody"></div>
+      <div class="modalActions">
+        <button class="primary" id="modalOk">Listo</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="./app.js"></script>
+</body>
+</html>
