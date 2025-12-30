@@ -141,7 +141,7 @@ btn?.addEventListener("click", async () => {
   setLoading(true);
   await new Promise((r) => setTimeout(r, 450));
 
-  const r = ratePct / 100; // mensual
+  const r = (ratePct / 100) / 12; // TEA → tasa mensual
   const cuota = loanMonthlyPayment(P, r, n);
 
   const schedule = buildSchedule(P, r, n, cuota);

@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -10,7 +11,7 @@
 
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./styles.css" />
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="data:," />
 </head>
 
 <body>
@@ -33,12 +34,12 @@
       </div>
 
       <div class="field">
-        <label>Interés mensual (%)</label>
+        <label>Interés anual (%)</label>
         <div class="inputWrap">
-          <input id="interes" inputmode="decimal" placeholder="Ej: 2.5" autocomplete="off" />
+          <input id="interes" inputmode="decimal" placeholder="Ej: 11" autocomplete="off" />
           <span class="suffix">%</span>
         </div>
-        <small class="hint">Interés mensual (no anual). Ej: 2.5 = 2.5%/mes</small>
+        <small class="hint">Interés anual. Ej: 15%/anual</small>
       </div>
 
       <div class="field">
@@ -68,11 +69,13 @@
           <div class="v" id="interesTotal">—</div>
         </div>
 
-        <button class="secondary" id="btnDetalle" disabled>Ver detalle</button>
+        <button class="secondary" id="btnDetalle" disabled>
+          Ver detalle
+        </button>
       </section>
     </main>
 
-    <footer class="foot">Offline • Minimal • iOS style</footer>
+    <footer class="foot">Aplication • Simulador • Prestamos</footer>
   </div>
 
   <!-- Modal (empieza cerrado) -->
@@ -91,4 +94,5 @@
 
   <script defer src="./app.js"></script>
 </body>
+
 </html>
